@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Easy Interpolation Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body
+    class="bg-gray-100 min-h-screen flex items-center justify-center p-4"
+    style="
+      background-image: url('./Assets/bg.jpg');
+      background-size: cover;
+      background-position: center;
+    "
+  >
+    <div class="bg-white rounded-xl shadow-2xl p-8 max-w-2xl w-full">
+      <div
+        id="result"
+        class="mt-3 mb-3 p-4 bg-green-100 text-green-700 rounded-md hidden"
+      ></div>
+      <div
+        id="error"
+        class="mt-3 mb-3 p-4 bg-red-100 text-red-700 rounded-md hidden"
+      ></div>
+
+      <h1 class="text-3xl font-bold text-center mb-6 text-blue-600">
+        Easy Interpolation Calculator
+      </h1>
+      <p class="text-gray-600 text-center mb-6">
+        Fill in 5 out of 6 values. Leave the value you want to calculate blank.
+      </p>
+      <form id="interpolatorForm" class="space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="space-y-2">
+            <h2 class="text-lg font-semibold text-gray-700">Point 1</h2>
+            <div>
+              <label for="x0" class="block text-sm font-medium text-gray-700"
+                >x₁</label
+              >
+              <input
+                type="number"
+                id="x0"
+                placeholder="Enter x₁"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+              />
+            </div>
+            <div>
+              <label for="y0" class="block text-sm font-medium text-gray-700"
+                >y₁</label
+              >
+              <input
+                type="number"
+                id="y0"
+                placeholder="Enter y₁"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+              />
+            </div>
+          </div>
+          <div class="space-y-2">
+            <h2 class="text-lg font-semibold text-gray-700">Point 2</h2>
+            <div>
+              <label for="x1" class="block text-sm font-medium text-gray-700"
+                >x₂</label
+              >
+              <input
+                type="number"
+                id="x1"
+                placeholder="Enter x₂"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+              />
+            </div>
+            <div>
+              <label for="y1" class="block text-sm font-medium text-gray-700"
+                >y₂</label
+              >
+              <input
+                type="number"
+                id="y1"
+                placeholder="Enter y₂"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+              />
+            </div>
+          </div>
+          <div class="space-y-2">
+            <h2 class="text-lg font-semibold text-gray-700">Point 3</h2>
+            <div>
+              <label for="x2" class="block text-sm font-medium text-gray-700"
+                >x₃</label
+              >
+              <input
+                type="number"
+                id="x2"
+                placeholder="Enter x₃"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+              />
+            </div>
+            <div>
+              <label for="y2" class="block text-sm font-medium text-gray-700"
+                >y₃</label
+              >
+              <input
+                type="number"
+                id="y2"
+                placeholder="Enter y₃"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="flex space-x-4">
+          <button
+            type="button"
+            onclick="interpolate()"
+            class="w-2/3 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded-md transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
+          >
+            Calculate
+          </button>
+
+          <button
+            type="button"
+            onclick="resetForm()"
+            class="w-1/3 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-3 px-4 rounded-md transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
+          >
+            Reset
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
